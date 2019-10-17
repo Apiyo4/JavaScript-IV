@@ -44,18 +44,37 @@ class Student extends Person{
     }
     
 }
-const Ada = new Student({
+class ProjectManager extends Instructor{
+    constructor(attributes){
+        super(attributes);
+        this.gradClassName = attributes.grandClassName;
+        this.favInstructor = attributes.favInstructor;
+    }
+    standUp(channel){
+        return `${this.name} announces to ${channel}, @channel standy times!`
+    }
+    debugsCode(student, subject){
+        return `${this.name} debugs ${student}'s code on ${subject}`
+    }
+}
+const Ada = new ProjectManager({
     name: "Ada",
     age: 23,
-    // location: "Kenya",
-    // specialty: "redux",
-    // favlanguage: "Python",
-    // catchPhrase:"Welcome to Python"
-    previousBackground: "Musician" ,
-    className: "WebEU7",
-    favSubjects: ["java", "CSS", "Angular"]
+    location: "Kenya",
+    specialty: "redux",
+    favlanguage: "Python",
+    catchPhrase:"Welcome to Python",
+    // previousBackground: "Musician" ,
+    // className: "WebEU7",
+    // favSubjects: ["java", "CSS", "Angular"]
+    gradClassName: "CS1",
+    favInstructor: "Sean"
 });
+console.log(Ada.debugsCode("Ann", "js"));
+console.log(Ada.standUp("WebEU4"));
+// console.log(Ada.PRAssignments("maths"));
+// console.log(Ada.sprintChallenge("maths"));
+// console.log(Ada.listSubjects());
 console.log(Ada);
-console.log(Ada.PRAssignments("maths"));
-console.log(Ada.sprintChallenge("maths"));
-console.log(Ada.listSubjects());
+
+
